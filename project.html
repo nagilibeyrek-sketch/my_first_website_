@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio - Projects</title>
+    <title>My Projects</title>
     <style>
-        /* NAVBAR STYLES (SAME AS OTHERS) */
+        /* NAVBAR (SAME) */
         .navbar {
-            background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+            background: linear-gradient(90deg, #2c3e50, #4ca1af);
             padding: 15px 0;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         
         .nav-container {
@@ -34,127 +34,125 @@
         
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 25px;
         }
         
         .nav-link {
             color: white;
             text-decoration: none;
             font-size: 1.1rem;
-            font-weight: 500;
             padding: 8px 16px;
-            border-radius: 25px;
+            border-radius: 20px;
             transition: all 0.3s;
         }
         
         .nav-link:hover {
             background: rgba(255,255,255,0.2);
-            transform: translateY(-2px);
         }
         
         .nav-link.active {
             background: white;
-            color: #6a11cb;
+            color: #2c3e50;
             font-weight: bold;
         }
         
-        /* Body styles */
+        /* BODY */
         body {
-            padding-top: 70px;
+            padding-top: 80px;
             margin: 0;
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #1a2980, #26d0ce);
+            background: #f8f9fa;
             min-height: 100vh;
         }
         
-        /* Projects container */
-        .projects-container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 20px;
+        /* PROJECTS CONTENT */
+        .projects-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
+            color: white;
+            margin-bottom: 40px;
         }
         
-        .circuit-grid {
+        .projects-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .circuits-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 40px;
+            gap: 30px;
         }
         
-        .circuit-box {
+        .circuit-card {
             background: white;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s;
         }
         
-        .circuit-box:hover {
-            transform: translateY(-10px);
+        .circuit-card:hover {
+            transform: translateY(-5px);
         }
         
         .circuit-title {
-            background: #1a2980;
+            background: #2c3e50;
             color: white;
-            padding: 20px;
+            padding: 15px;
             text-align: center;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: bold;
         }
         
-        .circuit-image {
+        .circuit-img {
             width: 100%;
-            height: 400px;
+            height: 300px;
             object-fit: contain;
             padding: 20px;
             background: #f8f9fa;
+            border-bottom: 2px solid #eee;
         }
         
         .circuit-info {
             padding: 20px;
+        }
+        
+        .circuit-info h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
             text-align: center;
-            background: #f8f9fa;
         }
         
         .specs {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 10px;
-            margin-top: 15px;
         }
         
         .spec-item {
-            background: white;
+            background: #f8f9fa;
             padding: 10px;
             border-radius: 8px;
-            border-left: 4px solid #26d0ce;
+            border-left: 3px solid #4ca1af;
         }
         
-        /* Mobile responsive */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
                 gap: 15px;
             }
             
-            .nav-links {
-                gap: 15px;
-            }
-            
             body {
-                padding-top: 100px;
+                padding-top: 120px;
             }
             
-            .circuit-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .circuit-image {
-                height: 300px;
-            }
-        }
-        
-        @media (max-width: 600px) {
-            .circuit-grid {
+            .circuits-container {
                 grid-template-columns: 1fr;
             }
             
@@ -178,66 +176,56 @@
     </nav>
 
     <!-- PROJECTS CONTENT -->
-    <div class="projects-container">
-        <div class="circuit-grid">
-            <!-- Circuit 1 -->
-            <div class="circuit-box">
-                <div class="circuit-title">Project - Circuit 1</div>
-                <img src="https://raw.githubusercontent.com/noglibaytec/my_first_website/main/images/circuit1_photo.jpg" 
-                     alt="Circuit 1" 
-                     class="circuit-image">
-                <div class="circuit-info">
-                    <h3>Precision Measurement Circuit</h3>
-                    <div class="specs">
-                        <div class="spec-item"><strong>Voltage:</strong> 2.0V - 4.0V ±0.8V</div>
-                        <div class="spec-item"><strong>Current:</strong> 50mA max</div>
-                        <div class="spec-item"><strong>Frequency:</strong> 1kHz - 10MHz</div>
-                        <div class="spec-item"><strong>Type:</strong> Analog</div>
-                    </div>
+    <div class="projects-header">
+        <h1>My Electronics Projects</h1>
+        <p>Circuit designs and electronic prototypes</p>
+    </div>
+    
+    <div class="circuits-container">
+        <!-- Circuit 1 -->
+        <div class="circuit-card">
+            <div class="circuit-title">Project - Circuit 1</div>
+            <img src="images/circuit1_photo.jpg" alt="Circuit 1" class="circuit-img">
+            <div class="circuit-info">
+                <h3>Precision Measurement Circuit</h3>
+                <div class="specs">
+                    <div class="spec-item"><strong>Voltage:</strong> 2.0V - 4.0V ±0.8V</div>
+                    <div class="spec-item"><strong>Current:</strong> 50mA max</div>
+                    <div class="spec-item"><strong>Frequency:</strong> 1kHz - 10MHz</div>
+                    <div class="spec-item"><strong>Type:</strong> Analog Measurement</div>
                 </div>
             </div>
-            
-            <!-- Circuit 2 -->
-            <div class="circuit-box">
-                <div class="circuit-title">Project - Circuit 2</div>
-                <img src="https://raw.githubusercontent.com/noglibaytec/my_first_website/main/images/circuit2_photo.jpg" 
-                     alt="Circuit 2" 
-                     class="circuit-image">
-                <div class="circuit-info">
-                    <h3>Angle Measurement Circuit</h3>
-                    <div class="specs">
-                        <div class="spec-item"><strong>Range:</strong> 0° - 360°</div>
-                        <div class="spec-item"><strong>Precision:</strong> ±0.1°</div>
-                        <div class="spec-item"><strong>Output:</strong> Digital (SPI/I2C)</div>
-                        <div class="spec-item"><strong>Power:</strong> 3.3V DC</div>
-                    </div>
+        </div>
+        
+        <!-- Circuit 2 -->
+        <div class="circuit-card">
+            <div class="circuit-title">Project - Circuit 2</div>
+            <img src="images/circuit2_photo.jpg" alt="Circuit 2" class="circuit-img">
+            <div class="circuit-info">
+                <h3>Angle Measurement Circuit</h3>
+                <div class="specs">
+                    <div class="spec-item"><strong>Range:</strong> 0° - 360°</div>
+                    <div class="spec-item"><strong>Precision:</strong> ±0.1°</div>
+                    <div class="spec-item"><strong>Output:</strong> Digital (SPI/I2C)</div>
+                    <div class="spec-item"><strong>Power:</strong> 3.3V DC</div>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Highlight active nav link
-        document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                if (link.href === window.location.href) {
-                    link.classList.add('active');
-                }
-            });
-            
-            // Image error handling
-            const images = document.querySelectorAll('.circuit-image');
-            images.forEach(img => {
-                img.onerror = function() {
-                    console.log('Image failed to load:', this.src);
-                    this.src = 'https://via.placeholder.com/500x400/1a2980/ffffff?text=Circuit+Image';
-                };
-                
-                img.onload = function() {
-                    console.log('✅ Image loaded:', this.src);
-                };
-            });
+        // Active link highlighting
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.href === window.location.href) {
+                link.classList.add('active');
+            }
+        });
+        
+        // Image error handling
+        document.querySelectorAll('.circuit-img').forEach(img => {
+            img.onerror = function() {
+                this.src = 'https://via.placeholder.com/500x300/2c3e50/ffffff?text=Circuit+Image';
+            };
         });
     </script>
 </body>
