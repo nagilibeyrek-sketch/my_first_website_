@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - About</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* NAVBAR STYLES (SAME AS INDEX.HTML) */
+        .navbar {
+            background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+        
+        .nav-link.active {
+            background: white;
+            color: #6a11cb;
+            font-weight: bold;
+        }
+        
+        /* Body styles */
+        body {
+            padding-top: 70px;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        /* About container */
+        .about-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .about-container h1 {
+            color: #6a11cb;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .about-content {
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .skill-tag {
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+            
+            body {
+                padding-top: 100px;
+            }
+            
+            .about-container {
+                margin: 20px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">MyPortfolio</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">🏠 Home</a>
+                <a href="about.html" class="nav-link active">ℹ️ About</a>
+                <a href="project.html" class="nav-link">🔧 Projects</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ABOUT CONTENT -->
+    <div class="about-container">
+        <h1>About Me</h1>
+        <div class="about-content">
+            <p>Hello! I'm a web development enthusiast learning to create beautiful and functional websites.</p>
+            
+            <p>I started my journey with HTML, CSS, and JavaScript in Visual Studio Code, and I'm continuously improving my skills.</p>
+            
+            <p>My interests include:</p>
+            <ul>
+                <li>Frontend web development</li>
+                <li>Electronic circuit design</li>
+                <li>Responsive web design</li>
+                <li>User interface design</li>
+            </ul>
+            
+            <p>This website is my first project where I'm applying everything I've learned so far.</p>
+            
+            <h3>My Skills:</h3>
+            <div class="skills">
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Circuit Design</span>
+                <span class="skill-tag">Git & GitHub</span>
+                <span class="skill-tag">VS Code</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Highlight active nav link
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if (link.href === window.location.href) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

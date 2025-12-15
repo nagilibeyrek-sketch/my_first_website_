@@ -3,10 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Website</title>
+    <title>My Portfolio - Home</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* NAVBAR STYLES */
+        .navbar {
+            background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+        
+        .nav-link.active {
+            background: white;
+            color: #6a11cb;
+            font-weight: bold;
+        }
+        
+        /* Body padding to account for fixed navbar */
+        body {
+            padding-top: 70px;
+            margin: 0;
+        }
+        
+        /* Update container */
+        .container {
+            margin-top: 20px;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+            
+            body {
+                padding-top: 100px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">MyPortfolio</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">🏠 Home</a>
+                <a href="about.html" class="nav-link">ℹ️ About</a>
+                <a href="project.html" class="nav-link">🔧 Projects</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
     <div class="container">
         <h1>Hello, World! 🌍</h1>
         <div class="subtitle">Welcome to My Colorful Website</div>
@@ -30,7 +124,7 @@
             </div>
         </div>
 
-        
+        <!-- Projects Link -->
         <div style="text-align: center; margin-top: 50px;">
             <h3 style="color: #4ca1af; margin-bottom: 20px;">🔧 Check out my electronics projects!</h3>
             <a href="project.html" class="button" style="background: linear-gradient(to right, #4ca1af, #2c3e50);">
@@ -39,7 +133,32 @@
         </div>
     </div>
 
+    <!-- GALLERY SECTION -->
+    <div class="gallery-container">
+        <h2>📸 My Gallery</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="images/photo1.jpg" alt="Nature" onclick="openModal(this)">
+                <p>Beautiful Nature</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/photo2.jpg" alt="Code" onclick="openModal(this)">
+                <p>Programming</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/photo3.jpg" alt="Design" onclick="openModal(this)">
+                <p>Web Design</p>
+            </div>
+        </div>
+    </div>
 
-    ...
+    <!-- MODAL FOR IMAGES -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

@@ -3,62 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Circuit Projects</title>
+    <title>My Portfolio - Projects</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* NAVBAR STYLES (SAME AS OTHERS) */
+        .navbar {
+            background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
         
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #1a2980, #26d0ce);
-            min-height: 100vh;
-            padding: 20px;
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
         }
         
-        .header {
-            text-align: center;
+        .logo {
             color: white;
-            padding: 30px 0;
-            margin-bottom: 40px;
-        }
-        
-        .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        
-        .back-button {
-            display: inline-block;
-            background: white;
-            color: #1a2980;
-            padding: 10px 25px;
-            border-radius: 25px;
-            text-decoration: none;
+            font-size: 1.8rem;
             font-weight: bold;
-            margin-top: 20px;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 25px;
             transition: all 0.3s;
         }
         
-        .back-button:hover {
-            background: #f0f0f0;
+        .nav-link:hover {
+            background: rgba(255,255,255,0.2);
             transform: translateY(-2px);
         }
         
-        .circuits-container {
+        .nav-link.active {
+            background: white;
+            color: #6a11cb;
+            font-weight: bold;
+        }
+        
+        /* Body styles */
+        body {
+            padding-top: 70px;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1a2980, #26d0ce);
+            min-height: 100vh;
+        }
+        
+        /* Projects container */
+        .projects-container {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        
+        .circuit-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
             gap: 40px;
-        }
-        
-        @media (max-width: 600px) {
-            .circuits-container {
-                grid-template-columns: 1fr;
-            }
         }
         
         .circuit-box {
@@ -109,74 +128,116 @@
             border-radius: 8px;
             border-left: 4px solid #26d0ce;
         }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+            
+            body {
+                padding-top: 100px;
+            }
+            
+            .circuit-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .circuit-image {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .circuit-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .specs {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>🔌 My Circuit Projects</h1>
-        <p>Electronic circuit designs and schematics</p>
-        <a href="index.html" class="back-button">← Back to Home</a>
-    </div>
-    
-    <div class="circuits-container">
-        <!-- Circuit 1 -->
-        <div class="circuit-box">
-            <div class="circuit-title">Project - Circuit 1</div>
-            <img src="https://raw.githubusercontent.com/noglibaytec/my_first_website/main/images/circuit1_photo.jpg" 
-                 alt="Circuit 1" 
-                 class="circuit-image">
-            <div class="circuit-info">
-                <h3>Precision Measurement Circuit</h3>
-                <div class="specs">
-                    <div class="spec-item"><strong>Voltage:</strong> 2.0V - 4.0V ±0.8V</div>
-                    <div class="spec-item"><strong>Current:</strong> 50mA max</div>
-                    <div class="spec-item"><strong>Frequency:</strong> 1kHz - 10MHz</div>
-                    <div class="spec-item"><strong>Type:</strong> Analog</div>
-                </div>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">MyPortfolio</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">🏠 Home</a>
+                <a href="about.html" class="nav-link">ℹ️ About</a>
+                <a href="project.html" class="nav-link active">🔧 Projects</a>
             </div>
         </div>
-        
-        <!-- Circuit 2 -->
-        <div class="circuit-box">
-            <div class="circuit-title">Project - Circuit 2</div>
-            <img src="https://raw.githubusercontent.com/noglibaytec/my_first_website/main/images/circuit2_photo.jpg" 
-                 alt="Circuit 2" 
-                 class="circuit-image">
-            <div class="circuit-info">
-                <h3>Angle Measurement Circuit</h3>
-                <div class="specs">
-                    <div class="spec-item"><strong>Range:</strong> 0° - 360°</div>
-                    <div class="spec-item"><strong>Precision:</strong> ±0.1°</div>
-                    <div class="spec-item"><strong>Output:</strong> Digital (SPI/I2C)</div>
-                    <div class="spec-item"><strong>Power:</strong> 3.3V DC</div>
+    </nav>
+
+    <!-- PROJECTS CONTENT -->
+    <div class="projects-container">
+        <div class="circuit-grid">
+            <!-- Circuit 1 -->
+            <div class="circuit-box">
+                <div class="circuit-title">Project - Circuit 1</div>
+                <img src="https://raw.githubusercontent.com/noglibaytec/my_first_website/main/images/circuit1_photo.jpg" 
+                     alt="Circuit 1" 
+                     class="circuit-image">
+                <div class="circuit-info">
+                    <h3>Precision Measurement Circuit</h3>
+                    <div class="specs">
+                        <div class="spec-item"><strong>Voltage:</strong> 2.0V - 4.0V ±0.8V</div>
+                        <div class="spec-item"><strong>Current:</strong> 50mA max</div>
+                        <div class="spec-item"><strong>Frequency:</strong> 1kHz - 10MHz</div>
+                        <div class="spec-item"><strong>Type:</strong> Analog</div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    
-    <script>
-        // Add image error handling
-        document.addEventListener('DOMContentLoaded', function() {
-            const images = document.querySelectorAll('.circuit-image');
             
+            <!-- Circuit 2 -->
+            <div class="circuit-box">
+                <div class="circuit-title">Project - Circuit 2</div>
+                <img src="https://raw.githubusercontent.com/noglibaytec/my_first_website/main/images/circuit2_photo.jpg" 
+                     alt="Circuit 2" 
+                     class="circuit-image">
+                <div class="circuit-info">
+                    <h3>Angle Measurement Circuit</h3>
+                    <div class="specs">
+                        <div class="spec-item"><strong>Range:</strong> 0° - 360°</div>
+                        <div class="spec-item"><strong>Precision:</strong> ±0.1°</div>
+                        <div class="spec-item"><strong>Output:</strong> Digital (SPI/I2C)</div>
+                        <div class="spec-item"><strong>Power:</strong> 3.3V DC</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Highlight active nav link
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if (link.href === window.location.href) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Image error handling
+            const images = document.querySelectorAll('.circuit-image');
             images.forEach(img => {
-                // Show loading status
-                console.log('Loading image:', img.src);
-                
                 img.onerror = function() {
                     console.log('Image failed to load:', this.src);
                     this.src = 'https://via.placeholder.com/500x400/1a2980/ffffff?text=Circuit+Image';
-                    this.alt = 'Circuit Image Placeholder';
                 };
                 
                 img.onload = function() {
-                    console.log('✅ Image loaded successfully:', this.src);
+                    console.log('✅ Image loaded:', this.src);
                 };
             });
-            
-            // Check if images are in repository
-            console.log('GitHub Repository: https://github.com/noglibaytec/my_first_website');
-            console.log('Images folder: https://github.com/noglibaytec/my_first_website/tree/main/images');
         });
     </script>
 </body>
