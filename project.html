@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Circuit Projects</title>
+    <title>Circuits</title>
     <style>
         * {
             margin: 0;
@@ -12,171 +12,66 @@
         }
         
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #1a2980, #26d0ce);
-            min-height: 100vh;
+            background: black;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .images-container {
+            display: flex;
+            gap: 20px;
             padding: 20px;
-        }
-        
-        .header {
-            text-align: center;
-            color: white;
-            padding: 30px 0;
-            margin-bottom: 40px;
-        }
-        
-        .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        
-        .back-button {
-            display: inline-block;
-            background: white;
-            color: #1a2980;
-            padding: 10px 25px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: all 0.3s;
-        }
-        
-        .back-button:hover {
-            background: #f0f0f0;
-            transform: translateY(-2px);
-        }
-        
-        .circuits-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 40px;
-        }
-        
-        @media (max-width: 600px) {
-            .circuits-container {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        .circuit-box {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            transition: transform 0.3s;
-        }
-        
-        .circuit-box:hover {
-            transform: translateY(-10px);
-        }
-        
-        .circuit-title {
-            background: #1a2980;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: bold;
         }
         
         .circuit-image {
-            width: 100%;
+            width: 500px;
             height: 400px;
             object-fit: contain;
-            padding: 20px;
-            background: #f8f9fa;
-        }
-        
-        .circuit-info {
-            padding: 20px;
-            text-align: center;
-            background: #f8f9fa;
-        }
-        
-        .specs {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-top: 15px;
-        }
-        
-        .spec-item {
+            border: 5px solid white;
+            border-radius: 10px;
             background: white;
-            padding: 10px;
-            border-radius: 8px;
-            border-left: 4px solid #26d0ce;
+        }
+        
+        /* Telefon üçün */
+        @media (max-width: 1100px) {
+            .images-container {
+                flex-direction: column;
+            }
+            
+            .circuit-image {
+                width: 90vw;
+                height: 70vh;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>🔌 My Circuit Projects</h1>
-        <p>Electronic circuit designs and schematics</p>
-        <a href="index.html" class="back-button">← Back to Home</a>
-    </div>
-    
-    <div class="circuits-container">
-        <!-- Circuit 1 -->
-        <div class="circuit-box">
-            <div class="circuit-title">Project - Circuit 1</div>
-            <img src="images/circuit1_photo.jpg" alt="Circuit 1" class="circuit-image">
-            <div class="circuit-info">
-                <h3>Precision Measurement Circuit</h3>
-                <div class="specs">
-                    <div class="spec-item"><strong>Voltage:</strong> 2.0V - 4.0V ±0.8V</div>
-                    <div class="spec-item"><strong>Current:</strong> 50mA max</div>
-                    <div class="spec-item"><strong>Frequency:</strong> 1kHz - 10MHz</div>
-                    <div class="spec-item"><strong>Type:</strong> Analog</div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Circuit 2 -->
-        <div class="circuit-box">
-            <div class="circuit-title">Project - Circuit 2</div>
-            <img src="images/circuit2_photo.jpg" alt="Circuit 2" class="circuit-image">
-            <div class="circuit-info">
-                <h3>Angle Measurement Circuit</h3>
-                <div class="specs">
-                    <div class="spec-item"><strong>Range:</strong> 0° - 360°</div>
-                    <div class="spec-item"><strong>Precision:</strong> ±0.1°</div>
-                    <div class="spec-item"><strong>Output:</strong> Digital (SPI/I2C)</div>
-                    <div class="spec-item"><strong>Power:</strong> 3.3V DC</div>
-                </div>
-            </div>
-        </div>
+    <div class="images-container">
+        <img src="images/circuit1_photo.jpg" alt="Circuit 1" class="circuit-image">
+        <img src="images/circuit2_photo.jpg" alt="Circuit 2" class="circuit-image">
     </div>
     
     <script>
+       
+        document.querySelectorAll('.circuit-image').forEach(img => {
+            img.onerror = function() {
+                this.src = 'https://via.placeholder.com/500x400/000000/ffffff?text=Circuit';
+            };
+        });
         
-        document.addEventListener('DOMContentLoaded', function() {
-            const images = document.querySelectorAll('.circuit-image');
-            
-            images.forEach(img => {
-                img.onerror = function() {
-                    console.log('Image failed to load:', this.src);
-                    this.src = 'https://via.placeholder.com/500x400/1a2980/ffffff?text=Circuit+Image';
-                    this.alt = 'Circuit Image Placeholder';
-                };
-                
-                
-                img.onload = function() {
-                    console.log('Image loaded successfully:', this.src);
-                };
-            });
-            
-            
-            document.querySelectorAll('.circuit-box').forEach(box => {
-                box.style.cursor = 'pointer';
-                box.addEventListener('click', function() {
-                    const img = this.querySelector('.circuit-image');
-                    if (img.src && !img.src.includes('placeholder')) {
-                        window.open(img.src, '_blank');
-                    }
-                });
+        
+        document.querySelectorAll('.circuit-image').forEach(img => {
+            img.addEventListener('click', function() {
+                this.classList.toggle('zoomed');
+                if (this.classList.contains('zoomed')) {
+                    this.style.transform = 'scale(1.5)';
+                    this.style.zIndex = '100';
+                } else {
+                    this.style.transform = 'scale(1)';
+                    this.style.zIndex = '1';
+                }
             });
         });
     </script>
