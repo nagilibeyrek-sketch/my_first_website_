@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Electronics Projects</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Project page specific styles */
+        .projects-header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .circuit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .circuit-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .circuit-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .circuit-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 3px solid #4ca1af;
+        }
+        
+        .circuit-info {
+            padding: 20px;
+        }
+        
+        .circuit-info h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .circuit-info p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: #4ca1af;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 30px auto;
+            text-align: center;
+            transition: background 0.3s;
+        }
+        
+        .back-button:hover {
+            background: #2c3e50;
+        }
+        
+        .technical-details {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+        
+        .technical-details h4 {
+            color: #4ca1af;
+            margin-bottom: 10px;
+        }
+        
+        .technical-details ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .technical-details li {
+            padding: 5px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .circuit-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .projects-header {
+                padding: 40px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="projects-header">
+        <h1>🔧 Electronics Projects</h1>
+        <p>My circuit designs and electronic projects</p>
+        <a href="index.html" class="back-button">← Back to Home</a>
+    </div>
+    
+    <div class="circuit-grid">
+        <!-- Circuit 1 -->
+        <div class="circuit-card">
+            <img src="images/circuit1_photo.jpg" alt="Circuit Design 1" class="circuit-img">
+            <div class="circuit-info">
+                <h3>Circuit Design #1</h3>
+                <p>A precision measurement circuit with voltage regulation and filtering capabilities.</p>
+                
+                <div class="technical-details">
+                    <h4>Technical Specifications:</h4>
+                    <ul>
+                        <li><strong>Voltage:</strong> 2.0V - 4.0V ±0.8V</li>
+                        <li><strong>Current:</strong> 50mA max</li>
+                        <li><strong>Frequency:</strong> 1kHz - 10MHz</li>
+                        <li><strong>Components:</strong> Op-amp, resistors, capacitors</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Circuit 2 -->
+        <div class="circuit-card">
+            <img src="images/circuit2_photo.jpg" alt="Circuit Design 2" class="circuit-img">
+            <div class="circuit-info">
+                <h3>Circuit Design #2</h3>
+                <p>Angle measurement circuit with high precision rotational sensors.</p>
+                
+                <div class="technical-details">
+                    <h4>Technical Specifications:</h4>
+                    <ul>
+                        <li><strong>Measurement Range:</strong> 0° - 360°</li>
+                        <li><strong>Precision:</strong> ±0.1°</li>
+                        <li><strong>Output:</strong> Digital (SPI/I2C)</li>
+                        <li><strong>Power:</strong> 3.3V DC</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Circuit 3 (Additional project) -->
+        <div class="circuit-card">
+            <img src="https://via.placeholder.com/400x250/4ca1af/ffffff?text=Coming+Soon" alt="Circuit Design 3" class="circuit-img">
+            <div class="circuit-info">
+                <h3>Circuit Design #3</h3>
+                <p>Power management circuit with battery charging and protection features. (Coming Soon)</p>
+                
+                <div class="technical-details">
+                    <h4>Technical Specifications:</h4>
+                    <ul>
+                        <li><strong>Input:</strong> 5V USB / 12V DC</li>
+                        <li><strong>Output:</strong> 3.3V, 5V, 12V</li>
+                        <li><strong>Charging Current:</strong> 1A max</li>
+                        <li><strong>Protection:</strong> Over-current, over-voltage</li>
+                        <li><strong>Status:</strong> In development</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript for interactivity -->
+    <script>
+        // Add click event to circuit cards
+        document.querySelectorAll('.circuit-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const imgSrc = this.querySelector('.circuit-img').src;
+                const title = this.querySelector('h3').textContent;
+                
+                // If it's not a placeholder image, open in new tab
+                if (!imgSrc.includes('placeholder')) {
+                    window.open(imgSrc, '_blank');
+                } else {
+                    alert(title + ' is coming soon! 🚀');
+                }
+            });
+        });
+        
+        // Add hover effect
+        document.querySelectorAll('.circuit-card').forEach(card => {
+            card.style.cursor = 'pointer';
+            
+            // Special hover effect for placeholder
+            const img = card.querySelector('.circuit-img');
+            if (img.src.includes('placeholder')) {
+                card.addEventListener('mouseenter', function() {
+                    this.style.opacity = '0.9';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.opacity = '1';
+                });
+            }
+        });
+        
+        // Add download functionality for circuit images
+        document.querySelectorAll('.circuit-img').forEach(img => {
+            img.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                const circuitName = this.alt.replace(' ', '_') + '.jpg';
+                alert('Right-click saved disabled. To download "' + circuitName + '", use the browser\'s save image option.');
+            });
+        });
+    </script>
+</body>
+</html>
