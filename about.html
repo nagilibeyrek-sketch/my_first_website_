@@ -3,188 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <title>About Beyrek Naghili</title>
     <style>
-        /* NAVBAR */
-        .navbar {
-            background: linear-gradient(90deg, #2c3e50, #4ca1af);
-            padding: 15px 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-        
-        .logo {
-            color: white;
-            font-size: 1.8rem;
-            font-weight: bold;
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 25px;
-        }
-        
-        .nav-link {
-            color: white;
-            text-decoration: none;
-            font-size: 1.1rem;
-            padding: 8px 16px;
-            border-radius: 20px;
-            transition: all 0.3s;
-        }
-        
-        .nav-link:hover {
-            background: rgba(255,255,255,0.2);
-        }
-        
-        .nav-link.active {
-            background: white;
-            color: #2c3e50;
-            font-weight: bold;
-        }
-        
-        /* BODY */
         body {
-            padding-top: 80px;
-            margin: 0;
             font-family: Arial, sans-serif;
-            background: #f8f9fa;
-            min-height: 100vh;
-        }
-        
-        /* ABOUT CONTENT */
-        .about-content {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 40px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-        
-        .about-content h1 {
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 30px;
-            border-bottom: 3px solid #4ca1af;
-            padding-bottom: 10px;
-        }
-        
-        .about-text {
-            line-height: 1.8;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
             color: #333;
-            font-size: 1.1rem;
+            text-align: center;
         }
-        
-        .about-text p {
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .profile-photo {
+            width: 200px; /* Şəkilin ölçüsünü dəyişə bilərsiniz */
+            height: auto;
+            border-radius: 50%; /* Şəkli dairəvi edir */
             margin-bottom: 20px;
+            border: 4px solid #007bff; /* Şəkil ətrafına çərçivə */
         }
-        
-        .skills-title {
-            color: #2c3e50;
-            margin-top: 30px;
+        h1 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        p {
+            line-height: 1.6;
             margin-bottom: 15px;
-        }
-        
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .skill {
-            background: #4ca1af;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-        
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            body {
-                padding-top: 120px;
-            }
-            
-            .about-content {
-                margin: 20px;
-                padding: 20px;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">MyPortfolio</a>
-            <div class="nav-links">
-                <a href="index.html" class="nav-link">🏠 Home</a>
-                <a href="about.html" class="nav-link active">ℹ️ About</a>
-                <a href="project.html" class="nav-link">🔧 Projects</a>
-            </div>
-        </div>
-    </nav>
 
-    <!-- ABOUT ME CONTENT -->
-    <div class="about-content">
-        <h1>About Me</h1>
-        
-        <div class="about-text">
-            <p>Hello! I am passionate about web development and electronic circuit design. I enjoy creating interactive websites and working on electronics projects.</p>
-            
-            <p>I started learning web development with HTML, CSS, and JavaScript, and I continue to improve my skills every day. My goal is to become a full-stack developer.</p>
-            
-            <p>In addition to web development, I have experience with:</p>
-            <ul>
-                <li>Electronic circuit design and prototyping</li>
-                <li>Microcontroller programming (Arduino, ESP32)</li>
-                <li>PCB design and fabrication</li>
-                <li>Sensor integration and IoT projects</li>
-            </ul>
-            
-            <p>This website showcases my first projects and demonstrates what I've learned so far.</p>
-            
-            <h3 class="skills-title">My Technical Skills:</h3>
-            <div class="skills">
-                <span class="skill">HTML5</span>
-                <span class="skill">CSS3</span>
-                <span class="skill">JavaScript</span>
-                <span class="skill">Git & GitHub</span>
-                <span class="skill">VS Code</span>
-                <span class="skill">Circuit Design</span>
-                <span class="skill">PCB Design</span>
-                <span class="skill">Arduino</span>
-                <span class="skill">Responsive Design</span>
-            </div>
-        </div>
+    <div class="container">
+        <img src="beyrek_profile_photo.jpg" alt="Beyrek Naghili Profile Photo" class="profile-photo">
+
+        <h1>Beyrek Naghili Haqqında</h1>
+
+        <p>
+            Hello, My name is **Beyrek Naghili**. I am an Electric/Electronic Engineering student at **ADA University**.
+        </p>
+
+        <p>
+            I am passionate about building websites.
+        </p>
+
     </div>
 
-    <script>
-        // Active link highlighting
-        document.querySelectorAll('.nav-link').forEach(link => {
-            if (link.href === window.location.href) {
-                link.classList.add('active');
-            }
-        });
-    </script>
 </body>
 </html>
