@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio - Home</title>
     <style>
-        /* NAVBAR (SAME) */
+        /* NAVBAR */
         .navbar {
             background: linear-gradient(90deg, #2c3e50, #4ca1af);
             padding: 15px 0;
@@ -60,79 +60,73 @@
         body {
             padding-top: 80px;
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             background: #f8f9fa;
             min-height: 100vh;
         }
         
-        /* HERO SECTION */
-        .hero {
+        /* MAIN CONTENT - SADƏ VƏ SƏLİQƏLİ */
+        .main-content {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 40px;
             text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(135deg, #2c3e50, #4ca1af);
-            color: white;
-            margin-bottom: 40px;
         }
         
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 30px;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: white;
+        .welcome-title {
             color: #2c3e50;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .welcome-subtitle {
+            color: #4ca1af;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .intro-text {
+            color: #555;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .btn {
             padding: 12px 30px;
             border-radius: 25px;
             text-decoration: none;
             font-weight: bold;
             font-size: 1.1rem;
             transition: all 0.3s;
+            display: inline-block;
         }
         
-        .cta-button:hover {
-            background: #f0f0f0;
-            transform: translateY(-3px);
+        .btn-primary {
+            background: linear-gradient(90deg, #2c3e50, #4ca1af);
+            color: white;
         }
         
-        /* FEATURES */
-        .features {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .feature-card {
+        .btn-secondary {
             background: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .feature-card h3 {
             color: #2c3e50;
-            margin-bottom: 15px;
+            border: 2px solid #2c3e50;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         /* RESPONSIVE */
@@ -146,12 +140,23 @@
                 padding-top: 120px;
             }
             
-            .hero h1 {
+            .main-content {
+                margin: 30px auto;
+                padding: 20px;
+            }
+            
+            .welcome-title {
                 font-size: 2.2rem;
             }
             
-            .features {
-                grid-template-columns: 1fr;
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 200px;
+                text-align: center;
             }
         }
     </style>
@@ -169,31 +174,19 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <div class="hero">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Hello! I'm a web developer and electronics enthusiast. This is my personal portfolio website where I showcase my projects and skills.</p>
-        <a href="project.html" class="cta-button">View My Projects →</a>
-    </div>
-    
-    <!-- FEATURES -->
-    <div class="features">
-        <div class="feature-card">
-            <div class="feature-icon">🎨</div>
-            <h3>Web Design</h3>
-            <p>Creating beautiful, responsive websites using HTML, CSS, and JavaScript.</p>
-        </div>
+    <!-- SADƏ VƏ SƏLİQƏLİ ƏSAS MƏZMUN -->
+    <div class="main-content">
+        <h1 class="welcome-title">Welcome to My Portfolio</h1>
+        <h2 class="welcome-subtitle">Web Developer & Electronics Enthusiast</h2>
         
-        <div class="feature-card">
-            <div class="feature-icon">🔌</div>
-            <h3>Electronics</h3>
-            <p>Designing and prototyping electronic circuits and PCB layouts.</p>
-        </div>
+        <p class="intro-text">
+            Hello! I'm passionate about creating innovative web solutions and designing electronic circuits. 
+            This portfolio showcases my projects and skills in both web development and electronics.
+        </p>
         
-        <div class="feature-card">
-            <div class="feature-icon">🚀</div>
-            <h3>Development</h3>
-            <p>Building interactive web applications with modern technologies.</p>
+        <div class="action-buttons">
+            <a href="project.html" class="btn btn-primary">View My Projects</a>
+            <a href="about.html" class="btn btn-secondary">Learn About Me</a>
         </div>
     </div>
 
