@@ -3,220 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Electronics Projects</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>My Circuit Projects</title>
     <style>
-        /* Project page specific styles */
-        .projects-header {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1a2980, #26d0ce);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .header {
             text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
             color: white;
+            padding: 30px 0;
             margin-bottom: 40px;
         }
         
-        .circuit-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .circuit-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .circuit-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .circuit-img {
-            width: 100%;
-            height: 250px;
-            object-fit: contain; /* Dəyişdim: cover-dən contain-ə */
-            background-color: #f5f5f5; /* Şəkil olmadıqda arxa fon */
-            border-bottom: 3px solid #4ca1af;
-        }
-        
-        .circuit-info {
-            padding: 20px;
-        }
-        
-        .circuit-info h3 {
-            color: #2c3e50;
+        .header h1 {
+            font-size: 2.5rem;
             margin-bottom: 10px;
-        }
-        
-        .circuit-info p {
-            color: #666;
-            line-height: 1.6;
         }
         
         .back-button {
             display: inline-block;
-            background: #4ca1af;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
+            background: white;
+            color: #1a2980;
+            padding: 10px 25px;
+            border-radius: 25px;
             text-decoration: none;
             font-weight: bold;
-            margin: 30px auto;
-            text-align: center;
-            transition: background 0.3s;
+            margin-top: 20px;
+            transition: all 0.3s;
         }
         
         .back-button:hover {
-            background: #2c3e50;
+            background: #f0f0f0;
+            transform: translateY(-2px);
         }
         
-        .technical-details {
-            background: #f8f9fa;
+        .circuits-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+        }
+        
+        @media (max-width: 600px) {
+            .circuits-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .circuit-box {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        
+        .circuit-box:hover {
+            transform: translateY(-10px);
+        }
+        
+        .circuit-title {
+            background: #1a2980;
+            color: white;
             padding: 20px;
-            border-radius: 10px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .circuit-image {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        
+        .circuit-info {
+            padding: 20px;
+            text-align: center;
+            background: #f8f9fa;
+        }
+        
+        .specs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
             margin-top: 15px;
         }
         
-        .technical-details h4 {
-            color: #4ca1af;
-            margin-bottom: 10px;
-        }
-        
-        .technical-details ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        
-        .technical-details li {
-            padding: 5px 0;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .circuit-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .projects-header {
-                padding: 40px 15px;
-            }
+        .spec-item {
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            border-left: 4px solid #26d0ce;
         }
     </style>
 </head>
 <body>
-    <div class="projects-header">
-        <h1>🔧 Electronics Projects</h1>
-        <p>My circuit designs and electronic projects</p>
+    <div class="header">
+        <h1>🔌 My Circuit Projects</h1>
+        <p>Electronic circuit designs and schematics</p>
         <a href="index.html" class="back-button">← Back to Home</a>
     </div>
     
-    <div class="circuit-grid">
+    <div class="circuits-container">
         <!-- Circuit 1 -->
-        <div class="circuit-card">
-            <img src="images/circuit1_photo.jpg" alt="Circuit Design 1" class="circuit-img" 
-                 onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250/4ca1af/ffffff?text=Circuit+1+Loading...';">
+        <div class="circuit-box">
+            <div class="circuit-title">Project - Circuit 1</div>
+            <img src="images/circuit1_photo.jpg" alt="Circuit 1" class="circuit-image">
             <div class="circuit-info">
-                <h3>Circuit Design #1</h3>
-                <p>A precision measurement circuit with voltage regulation and filtering capabilities.</p>
-                
-                <div class="technical-details">
-                    <h4>Technical Specifications:</h4>
-                    <ul>
-                        <li><strong>Voltage:</strong> 2.0V - 4.0V ±0.8V</li>
-                        <li><strong>Current:</strong> 50mA max</li>
-                        <li><strong>Frequency:</strong> 1kHz - 10MHz</li>
-                        <li><strong>Components:</strong> Op-amp, resistors, capacitors</li>
-                    </ul>
+                <h3>Precision Measurement Circuit</h3>
+                <div class="specs">
+                    <div class="spec-item"><strong>Voltage:</strong> 2.0V - 4.0V ±0.8V</div>
+                    <div class="spec-item"><strong>Current:</strong> 50mA max</div>
+                    <div class="spec-item"><strong>Frequency:</strong> 1kHz - 10MHz</div>
+                    <div class="spec-item"><strong>Type:</strong> Analog</div>
                 </div>
             </div>
         </div>
         
         <!-- Circuit 2 -->
-        <div class="circuit-card">
-            <img src="images/circuit2_photo.jpg" alt="Circuit Design 2" class="circuit-img"
-                 onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250/2c3e50/ffffff?text=Circuit+2+Loading...';">
+        <div class="circuit-box">
+            <div class="circuit-title">Project - Circuit 2</div>
+            <img src="images/circuit2_photo.jpg" alt="Circuit 2" class="circuit-image">
             <div class="circuit-info">
-                <h3>Circuit Design #2</h3>
-                <p>Angle measurement circuit with high precision rotational sensors.</p>
-                
-                <div class="technical-details">
-                    <h4>Technical Specifications:</h4>
-                    <ul>
-                        <li><strong>Measurement Range:</strong> 0° - 360°</li>
-                        <li><strong>Precision:</strong> ±0.1°</li>
-                        <li><strong>Output:</strong> Digital (SPI/I2C)</li>
-                        <li><strong>Power:</strong> 3.3V DC</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Circuit 3 (Placeholder) -->
-        <div class="circuit-card">
-            <img src="https://via.placeholder.com/400x250/6a11cb/ffffff?text=Coming+Soon" alt="Circuit Design 3" class="circuit-img">
-            <div class="circuit-info">
-                <h3>Circuit Design #3</h3>
-                <p>Power management circuit with battery charging and protection features. (Coming Soon)</p>
-                
-                <div class="technical-details">
-                    <h4>Technical Specifications:</h4>
-                    <ul>
-                        <li><strong>Input:</strong> 5V USB / 12V DC</li>
-                        <li><strong>Output:</strong> 3.3V, 5V, 12V</li>
-                        <li><strong>Charging Current:</strong> 1A max</li>
-                        <li><strong>Protection:</strong> Over-current, over-voltage</li>
-                        <li><strong>Status:</strong> In development</li>
-                    </ul>
+                <h3>Angle Measurement Circuit</h3>
+                <div class="specs">
+                    <div class="spec-item"><strong>Range:</strong> 0° - 360°</div>
+                    <div class="spec-item"><strong>Precision:</strong> ±0.1°</div>
+                    <div class="spec-item"><strong>Output:</strong> Digital (SPI/I2C)</div>
+                    <div class="spec-item"><strong>Power:</strong> 3.3V DC</div>
                 </div>
             </div>
         </div>
     </div>
     
-    <!-- JavaScript for interactivity -->
     <script>
-        // Check if images are loaded
+        
         document.addEventListener('DOMContentLoaded', function() {
-            const images = document.querySelectorAll('.circuit-img');
+            const images = document.querySelectorAll('.circuit-image');
             
             images.forEach(img => {
-                // Check if image loads successfully
-                img.addEventListener('load', function() {
-                    console.log('Image loaded:', this.src);
-                });
-                
-                img.addEventListener('error', function() {
+                img.onerror = function() {
                     console.log('Image failed to load:', this.src);
-                    // Fallback image already handled by onerror attribute
-                });
+                    this.src = 'https://via.placeholder.com/500x400/1a2980/ffffff?text=Circuit+Image';
+                    this.alt = 'Circuit Image Placeholder';
+                };
+                
+                
+                img.onload = function() {
+                    console.log('Image loaded successfully:', this.src);
+                };
             });
             
-            // Add click event to circuit cards
-            document.querySelectorAll('.circuit-card').forEach(card => {
-                card.addEventListener('click', function() {
-                    const img = this.querySelector('.circuit-img');
-                    const title = this.querySelector('h3').textContent;
-                    
-                    // If it's a real image (not placeholder), open in new tab
-                    if (img.src && !img.src.includes('placeholder') && !img.src.includes('Loading')) {
+            
+            document.querySelectorAll('.circuit-box').forEach(box => {
+                box.style.cursor = 'pointer';
+                box.addEventListener('click', function() {
+                    const img = this.querySelector('.circuit-image');
+                    if (img.src && !img.src.includes('placeholder')) {
                         window.open(img.src, '_blank');
-                    } else {
-                        alert(title + ' - Image preview');
                     }
                 });
-                
-                // Add hover effect
-                this.style.cursor = 'pointer';
             });
-            
-            // Debug info
-            console.log('GitHub Pages URL:', window.location.href);
-            console.log('Trying to load images from relative path: images/');
         });
     </script>
 </body>
