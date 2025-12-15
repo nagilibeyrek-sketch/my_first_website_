@@ -39,7 +39,8 @@
         .circuit-img {
             width: 100%;
             height: 250px;
-            object-fit: cover;
+            object-fit: contain; /* Dəyişdim: cover-dən contain-ə */
+            background-color: #f5f5f5; /* Şəkil olmadıqda arxa fon */
             border-bottom: 3px solid #4ca1af;
         }
         
@@ -118,8 +119,8 @@
     <div class="circuit-grid">
         <!-- Circuit 1 -->
         <div class="circuit-card">
-            <img src="/my_first_website/images/circuit1_photo.jpg" ...>
- alt="Circuit Design 1" class="circuit-img">
+            <img src="images/circuit1_photo.jpg" alt="Circuit Design 1" class="circuit-img" 
+                 onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250/4ca1af/ffffff?text=Circuit+1+Loading...';">
             <div class="circuit-info">
                 <h3>Circuit Design #1</h3>
                 <p>A precision measurement circuit with voltage regulation and filtering capabilities.</p>
@@ -138,7 +139,8 @@
         
         <!-- Circuit 2 -->
         <div class="circuit-card">
-            <img src="/my_first_website/images/circuit2_photo.jpg" ...> alt="Circuit Design 2" class="circuit-img">
+            <img src="images/circuit2_photo.jpg" alt="Circuit Design 2" class="circuit-img"
+                 onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250/2c3e50/ffffff?text=Circuit+2+Loading...';">
             <div class="circuit-info">
                 <h3>Circuit Design #2</h3>
                 <p>Angle measurement circuit with high precision rotational sensors.</p>
@@ -150,49 +152,71 @@
                         <li><strong>Precision:</strong> ±0.1°</li>
                         <li><strong>Output:</strong> Digital (SPI/I2C)</li>
                         <li><strong>Power:</strong> 3.3V DC</li>
-       
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Circuit 3 (Placeholder) -->
+        <div class="circuit-card">
+            <img src="https://via.placeholder.com/400x250/6a11cb/ffffff?text=Coming+Soon" alt="Circuit Design 3" class="circuit-img">
+            <div class="circuit-info">
+                <h3>Circuit Design #3</h3>
+                <p>Power management circuit with battery charging and protection features. (Coming Soon)</p>
+                
+                <div class="technical-details">
+                    <h4>Technical Specifications:</h4>
+                    <ul>
+                        <li><strong>Input:</strong> 5V USB / 12V DC</li>
+                        <li><strong>Output:</strong> 3.3V, 5V, 12V</li>
+                        <li><strong>Charging Current:</strong> 1A max</li>
+                        <li><strong>Protection:</strong> Over-current, over-voltage</li>
+                        <li><strong>Status:</strong> In development</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <!-- JavaScript for interactivity -->
     <script>
-        // Add click event to circuit cards
-        document.querySelectorAll('.circuit-card').forEach(card => {
-            card.addEventListener('click', function() {
-                const imgSrc = this.querySelector('.circuit-img').src;
-                const title = this.querySelector('h3').textContent;
-                
-                // If it's not a placeholder image, open in new tab
-                if (!imgSrc.includes('placeholder')) {
-                    window.open(imgSrc, '_blank');
-                } else {
-                    alert(title + ' is coming soon! 🚀');
-                }
-            });
-        });
-        
-        // Add hover effect
-        document.querySelectorAll('.circuit-card').forEach(card => {
-            card.style.cursor = 'pointer';
+        // Check if images are loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.circuit-img');
             
-            // Special hover effect for placeholder
-            const img = card.querySelector('.circuit-img');
-            if (img.src.includes('placeholder')) {
-                card.addEventListener('mouseenter', function() {
-                    this.style.opacity = '0.9';
+            images.forEach(img => {
+                // Check if image loads successfully
+                img.addEventListener('load', function() {
+                    console.log('Image loaded:', this.src);
                 });
                 
-                card.addEventListener('mouseleave', function() {
-                    this.style.opacity = '1';
+                img.addEventListener('error', function() {
+                    console.log('Image failed to load:', this.src);
+                    // Fallback image already handled by onerror attribute
                 });
-            }
-        });
-        
-        // Add download functionality for circuit images
-        document.querySelectorAll('.circuit-img').forEach(img => {
-            img.addEventListener('contextmenu', function(e) {
-                e.preventDefault();
-                const circuitName = this.alt.replace(' ', '_') + '.jpg';
-                alert('Right-click saved disabled. To download "' + circuitName + '", use the browser\'s save image option.');
             });
+            
+            // Add click event to circuit cards
+            document.querySelectorAll('.circuit-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const img = this.querySelector('.circuit-img');
+                    const title = this.querySelector('h3').textContent;
+                    
+                    // If it's a real image (not placeholder), open in new tab
+                    if (img.src && !img.src.includes('placeholder') && !img.src.includes('Loading')) {
+                        window.open(img.src, '_blank');
+                    } else {
+                        alert(title + ' - Image preview');
+                    }
+                });
+                
+                // Add hover effect
+                this.style.cursor = 'pointer';
+            });
+            
+            // Debug info
+            console.log('GitHub Pages URL:', window.location.href);
+            console.log('Trying to load images from relative path: images/');
         });
     </script>
 </body>
