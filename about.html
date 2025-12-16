@@ -1,206 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beyrek Naghili - Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-        
-        header {
-            background-color: #007bff;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        
-        .profile-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .profile-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            border: 5px solid white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            overflow: hidden;
-            object-fit: cover;
-        }
-        
-        .profile-info h1 {
-            color: white;
-            margin-bottom: 10px;
-            font-size: 2.5rem;
-        }
-        
-        .profile-info h2 {
-            color: #f0f8ff;
-            font-weight: normal;
-            font-size: 1.3rem;
-        }
-        
-        .main-content {
-            padding: 40px;
-        }
-        
-        h2 {
-            color: #007bff;
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #eaeaea;
-            text-align: center;
-        }
-        
-        .intro-section {
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        
-        .intro-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            background-color: #f8f9fa;
-            padding: 25px;
-            border-radius: 8px;
-            border-left: 4px solid #007bff;
-            margin-bottom: 30px;
-        }
-        
-        .highlight {
-            font-weight: bold;
-            color: #0056b3;
-        }
-        
-        p {
-            margin-bottom: 20px;
-            font-size: 1.05rem;
-            text-align: justify;
-        }
-        
-        .divider {
-            height: 2px;
-            background-color: #eaeaea;
-            margin: 30px 0;
-        }
-        
-        ul {
-            padding-left: 20px;
-            margin-bottom: 25px;
-        }
-        
-        li {
-            margin-bottom: 12px;
-            font-size: 1.05rem;
-        }
-        
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #666;
-            font-size: 0.9rem;
-            border-top: 1px solid #ddd;
-            background-color: #f8f9fa;
-        }
-        
-        @media (max-width: 768px) {
-            .profile-info h1 {
-                font-size: 2rem;
-            }
-            
-            .profile-info h2 {
-                font-size: 1.1rem;
-            }
-            
-            .main-content {
-                padding: 25px;
-            }
-            
-            .profile-photo {
-                width: 150px;
-                height: 150px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <div class="profile-section">
-                <!-- Your actual profile photo -->
-                <img src="<img src="./beyrek_Profile_Photo.jpg" alt="Beyrek Naghili" class="profile-photo">" alt="Beyrek Naghili" class="profile-photo">
-                <div class="profile-info">
-                    <h1>Beyrek Naghili</h1>
-                    <h2>ADA University - Electrical/Electronic Engineering Student</h2>
-                </div>
-            </div>
-        </header>
-        
-        <div class="main-content">
-            <h2>About Me</h2>
-            
-            <div class="intro-section">
-                <div class="intro-text">
-                    <p>I am <span class="highlight">Beyrek Naghili</span>. I am an <span class="highlight">Electrical/Electronic Engineering student at ADA University</span>.</p>
-                </div>
-            </div>
-            
-            <p>
-                Hello! I am passionate about web development and electronic circuit design. I enjoy creating interactive websites and working on electronics projects.
-            </p>
-            
-            <p>
-                I started learning web development with HTML, CSS and JavaScript, and I continue to improve my skills every day. My goal is to become a full-stack developer.
-            </p>
-            
-            <div class="divider"></div>
-            
-            <h3>Beyond Web Development</h3>
-            <p>In addition to web development, I have experience in:</p>
-            <ul>
-                <li>Electronic circuit design and prototyping</li>
-                <li>Microcontroller programming (Arduino, ESP32)</li>
-                <li>PCB design and manufacturing</li>
-                <li>Sensor integration and IoT projects</li>
-            </ul>
-            
-            <p>This website showcases my first projects and demonstrates what I have learned so far.</p>
-        </div>
-        
-        <footer>
-            <p>Beyrek Naghili's Portfolio &copy; <span id="currentYear"></span></p>
-            <p>ADA University - Electrical/Electronic Engineering Student</p>
-        </footer>
-    </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>About — Beyrek Naghili</title>
     
-    <script>
-        // Display current year in footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
-</body>
+  </head>
+  <body>
+    <!-- NAV -->
+    <header class="site-header">
+      <div class="container nav-row">
+        
+        <button id="nav-toggle-2" class="nav-toggle" aria-label="Toggle navigation">☰</button>
+        <nav id="site-nav-2" class="site-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ABOUT CONTENT -->
+    <main class="container content">
+      <article class="about-intro">
+        <div class="about-head">
+          <div>
+            <h1>Hello — I'm Beyrek Naghili</h1>
+            <p class="lead">I'm an Electrical and Electronics Engineering student at ADA University with a passion for front-end development, design, and fashion.</p>
+          </div>
+        </div>
+
+        <!-- Background section: explain learning journey -->
+        <section>
+          <h2>Background</h2>
+          <p>
+            I began learning programming fundamentals through practice — writing small C++ programs, taking practice tests, and solving algorithmic problems to strengthen problem-solving skills. Over time I explored front-end development to combine logic with visual design, building small web projects to practise HTML, CSS, and JavaScript and improve my UI skills.
+          </p>
+        </section>
+
+        <section>
+          <h2>Qualifications & Activities</h2>
+          <ul>
+            <li>Front-end development studies at Coders Academy (2024–2025)</li>
+            <li>Volunteer at the 2024 Formula 1 event</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Interests</h2>
+          <p>Online gaming, technology, and modern UI design are things I spend my free time exploring.</p>
+        </section>
+      </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          
+          <p><a href="https://github.com/nagilibeyrek-sketch/my_first_website_" target="_blank" rel="noopener">Public repository</a></p>
+        </div>
+        <div class="socials">
+          <a href="https://github.com/beyreknaghili" aria-label="GitHub" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.37-1.3-1.73-1.3-1.73-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.76.41-1.27.75-1.56-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.45.11-3.02 0 0 .97-.31 3.18 1.19a11.1 11.1 0 012.9-.39c.98 0 1.97.13 2.9.39 2.21-1.5 3.18-1.19 3.18-1.19.63 1.57.23 2.73.11 3.02.74.81 1.19 1.84 1.19 3.1 0 4.42-2.68 5.4-5.24 5.68.42.36.8 1.07.8 2.16 0 1.56-.01 2.82-.01 3.2 0 .31.21.68.8.56A11.52 11.52 0 0023.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+          </a>
+          <a href="https://www.codecademy.com/profiles/bnaghili23930" aria-label="Codecademy" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7v6c0 5 3.8 9.7 10 11 6.2-1.3 10-6 10-11V7l-10-5zM9.5 13.5V8l6 3.5-6 2z"/></svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    
+  </body>
 </html>
+<!-- Content refined -->
