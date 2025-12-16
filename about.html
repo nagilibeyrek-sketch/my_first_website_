@@ -3,57 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Beyrek Naghili</title>
+    <title>Beyrek Naghili - Portfolio</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
+        * {
+            margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            text-align: center;
+            box-sizing: border-box;
         }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        
         .container {
             max-width: 800px;
             margin: 0 auto;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
         }
-        .profile-photo {
-            width: 200px; 
-            height: auto;
-            border-radius: 50%; 
+        
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            margin-bottom: 30px;
+        }
+        
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             margin-bottom: 20px;
-            border: 4px solid #007bff; 
         }
-        h1 {
-            color: #007bff;
+        
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        
+        .profile-info h1 {
+            color: white;
             margin-bottom: 10px;
+            font-size: 2.5rem;
         }
+        
+        .profile-info h2 {
+            color: #f0f8ff;
+            font-weight: normal;
+            font-size: 1.3rem;
+        }
+        
+        .main-content {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            color: #007bff;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eaeaea;
+            text-align: center;
+        }
+        
+        .intro-section {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+            margin-bottom: 30px;
+        }
+        
+        .highlight {
+            font-weight: bold;
+            color: #0056b3;
+        }
+        
         p {
-            line-height: 1.6;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+        
+        .divider {
+            height: 2px;
+            background-color: #eaeaea;
+            margin: 30px 0;
+        }
+        
+        ul {
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+        
+        li {
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #ddd;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .profile-info h1 {
+                font-size: 2rem;
+            }
+            
+            .profile-info h2 {
+                font-size: 1.1rem;
+            }
+            
+            .main-content {
+                padding: 25px;
+            }
+            
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
         }
     </style>
 </head>
 <body>
-
+    <header>
+        <div class="container">
+            <div class="profile-section">
+                <!-- Profile photo - replace with actual image -->
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" 
+                     alt="Beyrek Naghili Profile Photo" class="profile-photo">
+                <div class="profile-info">
+                    <h1>Beyrek Naghili</h1>
+                    <h2>ADA University - Electrical/Electronic Engineering Student</h2>
+                </div>
+            </div>
+        </div>
+    </header>
+    
     <div class="container">
-        <img src="beyrek_profile_photo.jpg" alt="Beyrek Naghili Profile Photo" class="profile-photo">
-
-        <h1>About</h1>
-
-        <p>
-            Hello, My name is **Beyrek Naghili**. I am an Electric/Electronic Engineering student at **ADA University**.
-        </p>
-
-        <p>
-            I am passionate about building websites.
-        </p>
-
+        <div class="main-content">
+            <h2>About Me</h2>
+            
+            <div class="intro-section">
+                <div class="intro-text">
+                    <p>I am <span class="highlight">Beyrek Naghili</span>. I am an <span class="highlight">Electrical/Electronic Engineering student at ADA University</span>.</p>
+                </div>
+            </div>
+            
+            <p>
+                Hello! I am passionate about web development and electronic circuit design. I enjoy creating interactive websites and working on electronics projects.
+            </p>
+            
+            <p>
+                I started learning web development with HTML, CSS and JavaScript, and I continue to improve my skills every day. My goal is to become a full-stack developer.
+            </p>
+            
+            <div class="divider"></div>
+            
+            <h3>Beyond Web Development</h3>
+            <p>In addition to web development, I have experience in:</p>
+            <ul>
+                <li>Electronic circuit design and prototyping</li>
+                <li>Microcontroller programming (Arduino, ESP32)</li>
+                <li>PCB design and manufacturing</li>
+                <li>Sensor integration and IoT projects</li>
+            </ul>
+            
+            <p>This website showcases my first projects and demonstrates what I have learned so far.</p>
+        </div>
+        
+        <footer>
+            <p>Beyrek Naghili's Portfolio &copy; <span id="currentYear"></span></p>
+            <p>ADA University - Electrical/Electronic Engineering Student</p>
+        </footer>
     </div>
-
+    
+    <script>
+        // Display current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
