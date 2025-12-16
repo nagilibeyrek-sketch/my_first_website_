@@ -16,21 +16,23 @@
             line-height: 1.6;
             color: #333;
             background-color: #f4f4f4;
+            padding: 20px;
         }
         
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
         
         header {
             background-color: #007bff;
             color: white;
-            padding: 40px 0;
+            padding: 40px 20px;
             text-align: center;
-            border-radius: 0 0 10px 10px;
-            margin-bottom: 30px;
         }
         
         .profile-section {
@@ -40,14 +42,26 @@
             margin-bottom: 20px;
         }
         
-        .profile-photo {
-            width: 180px;
-            height: 180px;
+        .profile-photo-container {
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
-            object-fit: cover;
             border: 5px solid white;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
+            overflow: hidden;
+            background-color: #f0f8ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .profile-photo-text {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #007bff;
+            text-align: center;
+            line-height: 1;
         }
         
         .profile-info h1 {
@@ -63,11 +77,7 @@
         }
         
         .main-content {
-            background-color: white;
             padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            margin-bottom: 40px;
         }
         
         h2 {
@@ -126,7 +136,7 @@
             color: #666;
             font-size: 0.9rem;
             border-top: 1px solid #ddd;
-            margin-top: 40px;
+            background-color: #f8f9fa;
         }
         
         @media (max-width: 768px) {
@@ -142,29 +152,31 @@
                 padding: 25px;
             }
             
-            .profile-photo {
+            .profile-photo-container {
                 width: 150px;
                 height: 150px;
+            }
+            
+            .profile-photo-text {
+                font-size: 2.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
+    <div class="container">
+        <header>
             <div class="profile-section">
-                <!-- Profile photo - replace with actual image -->
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" 
-                     alt="Beyrek Naghili Profile Photo" class="profile-photo">
+                <div class="profile-photo-container">
+                    <div class="profile-photo-text">5</div>
+                </div>
                 <div class="profile-info">
                     <h1>Beyrek Naghili</h1>
                     <h2>ADA University - Electrical/Electronic Engineering Student</h2>
                 </div>
             </div>
-        </div>
-    </header>
-    
-    <div class="container">
+        </header>
+        
         <div class="main-content">
             <h2>About Me</h2>
             
