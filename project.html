@@ -1,62 +1,117 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Projects — Beyrek Naghili</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | MyPortfolio</title>
+    <style>
+        /* Bu stil, şəkildəki dizayna yaxın bir görünüş yaratmaq üçündür. */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .navbar {
+            background-color: #008080; /* Navbar rəngi */
+            padding: 15px 0;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            margin: 0 5px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .navbar a:hover, .navbar a.active {
+            background-color: #006666;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 30px;
+        }
+        .project-item {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            text-align: left;
+            transition: box-shadow 0.3s ease;
+        }
+        .project-item:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        .project-item h2 {
+            color: #333;
+            border-bottom: 2px solid #008080;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        .project-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html" class="active">Projects</a>
+    </div>
+
+    <div class="container">
+        <h1>My Projects</h1>
+
+        <div class="project-item">
+            <h2>Project 1: Personal Website Development (SITE 1101)</h2>
+            <p>
+                This project was developed as part of the Principles of Information Systems course. 
+                It demonstrates my initial skills in front-end development using **HTML, CSS, and basic JavaScript**.
+            </p>
+            <img src="project_1_screenshot.jpg" alt="Project 1 Screenshot" class="project-image">
+            <p>
+                **Description:** I used this project to practice responsive design principles, 
+                version control with Git/Github, and hosting the static website on Github Pages.
+            </p>
+            <a href="https://github.com/yourusername/your-repo" target="_blank">View on GitHub</a>
+        </div>
+
+        <div class="project-item">
+            <h2>Project 2: Hour of Code (Optional)</h2>
+            <p>
+                A short introductory coding project focusing on basic programming logic and structures. 
+                *(Təsviri və şəkli özünüz əlavə edin)*
+            </p>
+            </div>
+
+        <div class="project-item">
+            <h2>IoT Home Monitoring System</h2>
+            <p>
+                A hardware-software integration project using an ESP32 microcontroller to monitor temperature and humidity 
+                data, and transmitting it to a cloud platform. *(Təsviri və şəkli özünüz əlavə edin)*
+            </p>
+            </div>
+
+    </div>
     
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container nav-row">
-        <a class="brand" href="index.html">Beyrek Naghili</a>
-        <button id="nav-toggle-3" class="nav-toggle" aria-label="Toggle navigation">☰</button>
-        <nav id="site-nav-3" class="site-nav">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <footer style="text-align: center; padding: 20px; background-color: #333; color: white;">
+        <p>© 2025 Beyrek Naghili. | <a href="LINK_TO_YOUR_GITHUB_REPO" style="color: lightblue;">Website Repository</a></p>
+        </footer>
 
-    <main class="container content">
-      <h1>Projects</h1>
-      <p>Below are two sample projects with demo links.</p>
-
-      <section class="projects-grid">
-        <!-- Project 1 -->
-        <article class="project-card">
-          <div class="project-thumb">
-            <img src="circuit1_photo.png" alt="Project 1 screenshot">
-          </div>
-          <div class="card-body">
-            <h3>Project 1 — Interactive UI</h3>
-            <p>A small interactive UI prototype showcasing responsive layout, animations, and polished styling.</p>
-          </div>
-          <div class="card-footer">
-            <a class="demo-link" href="https://youtu.be/oPSsIOmqRNQ?si=81ku8QYr7FxRhup6" target="_blank" rel="noopener">Watch Demo</a>
-          </div>
-        </article>
-
-        <!-- Project 2 -->
-        <article class="project-card">
-          <div class="project-thumb">
-            <img src="circuit2_photo.png" alt="Project 2 screenshot">
-          </div>
-          <div class="card-body">
-            <h3>Project 2 — Data Dashboard</h3>
-            <p>A compact dashboard prototype demonstrating layout skills and data visualization basics.</p>
-          </div>
-          <div class="card-footer">
-            <a class="demo-link" href="https://youtu.be/1VjGMTu5XUg?si=EuDQPuzhHsRbH5R0" target="_blank" rel="noopener">Watch Demo</a>
-          </div>
-        </article>
-      </section>
-    </main>
-
-    
-  </body>
+</body>
 </html>
