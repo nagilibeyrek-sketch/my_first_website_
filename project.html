@@ -1,232 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Projects</title>
-    <style>
-        /* NAVBAR (SAME) */
-        .navbar {
-            background: linear-gradient(90deg, #2c3e50, #4ca1af);
-            padding: 15px 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-        
-        .logo {
-            color: white;
-            font-size: 1.8rem;
-            font-weight: bold;
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 25px;
-        }
-        
-        .nav-link {
-            color: white;
-            text-decoration: none;
-            font-size: 1.1rem;
-            padding: 8px 16px;
-            border-radius: 20px;
-            transition: all 0.3s;
-        }
-        
-        .nav-link:hover {
-            background: rgba(255,255,255,0.2);
-        }
-        
-        .nav-link.active {
-            background: white;
-            color: #2c3e50;
-            font-weight: bold;
-        }
-        
-        /* BODY */
-        body {
-            padding-top: 80px;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f8f9fa;
-            min-height: 100vh;
-        }
-        
-        /* PROJECTS CONTENT */
-        .projects-header {
-            text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #2c3e50, #4ca1af);
-            color: white;
-            margin-bottom: 40px;
-        }
-        
-        .projects-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        
-        .circuits-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 30px;
-        }
-        
-        .circuit-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .circuit-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .circuit-title {
-            background: #2c3e50;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            font-size: 1.3rem;
-            font-weight: bold;
-        }
-        
-        .circuit-img {
-            width: 100%;
-            height: 300px;
-            object-fit: contain;
-            padding: 20px;
-            background: #f8f9fa;
-            border-bottom: 2px solid #eee;
-        }
-        
-        .circuit-info {
-            padding: 20px;
-        }
-        
-        .circuit-info h3 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        
-        .specs {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-        
-        .spec-item {
-            background: #f8f9fa;
-            padding: 10px;
-            border-radius: 8px;
-            border-left: 3px solid #4ca1af;
-        }
-        
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            body {
-                padding-top: 120px;
-            }
-            
-            .circuits-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .specs {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">MyPortfolio</a>
-            <div class="nav-links">
-                <a href="index.html" class="nav-link">🏠 Home</a>
-                <a href="about.html" class="nav-link">ℹ️ About</a>
-                <a href="project.html" class="nav-link active">🔧 Projects</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- PROJECTS CONTENT -->
-    <div class="projects-header">
-        <h1>My Electronics Projects</h1>
-        <p>Circuit designs and electronic prototypes</p>
-    </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Projects — Beyrek Naghili</title>
     
-    <div class="circuits-container">
-        <!-- Circuit 1 -->
-        <div class="circuit-card">
-            <div class="circuit-title">Project - Circuit 1</div>
-            <img src="images/circuit1_photo.jpg" alt="Circuit 1" class="circuit-img">
-            <div class="circuit-info">
-                <h3>Precision Measurement Circuit</h3>
-                <div class="specs">
-                    <div class="spec-item"><strong>Voltage:</strong> 2.0V - 4.0V ±0.8V</div>
-                    <div class="spec-item"><strong>Current:</strong> 50mA max</div>
-                    <div class="spec-item"><strong>Frequency:</strong> 1kHz - 10MHz</div>
-                    <div class="spec-item"><strong>Type:</strong> Analog Measurement</div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Circuit 2 -->
-        <div class="circuit-card">
-            <div class="circuit-title">Project - Circuit 2</div>
-            <img src="images/circuit2_photo.jpg" alt="Circuit 2" class="circuit-img">
-            <div class="circuit-info">
-                <h3>Angle Measurement Circuit</h3>
-                <div class="specs">
-                    <div class="spec-item"><strong>Range:</strong> 0° - 360°</div>
-                    <div class="spec-item"><strong>Precision:</strong> ±0.1°</div>
-                    <div class="spec-item"><strong>Output:</strong> Digital (SPI/I2C)</div>
-                    <div class="spec-item"><strong>Power:</strong> 3.3V DC</div>
-                </div>
-            </div>
-        </div>
-    </div>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-row">
+        <a class="brand" href="index.html">Beyrek Naghili</a>
+        <button id="nav-toggle-3" class="nav-toggle" aria-label="Toggle navigation">☰</button>
+        <nav id="site-nav-3" class="site-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-    <script>
-        // Active link highlighting
-        document.querySelectorAll('.nav-link').forEach(link => {
-            if (link.href === window.location.href) {
-                link.classList.add('active');
-            }
-        });
-        
-        // Image error handling
-        document.querySelectorAll('.circuit-img').forEach(img => {
-            img.onerror = function() {
-                this.src = 'https://via.placeholder.com/500x300/2c3e50/ffffff?text=Circuit+Image';
-            };
-        });
-    </script>
-</body>
+    <main class="container content">
+      <h1>Projects</h1>
+      <p>Below are two sample projects with demo links.</p>
+
+      <section class="projects-grid">
+        <!-- Project 1 -->
+        <article class="project-card">
+          <div class="project-thumb">
+            <img src="assets/images/project1.png" alt="Project 1 screenshot">
+          </div>
+          <div class="card-body">
+            <h3>Project 1 — Interactive UI</h3>
+            <p>A small interactive UI prototype showcasing responsive layout, animations, and polished styling.</p>
+          </div>
+          <div class="card-footer">
+            <a class="demo-link" href="https://youtu.be/oPSsIOmqRNQ?si=81ku8QYr7FxRhup6" target="_blank" rel="noopener">Watch Demo</a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card">
+          <div class="project-thumb">
+            <img src="assets/images/project2.png" alt="Project 2 screenshot">
+          </div>
+          <div class="card-body">
+            <h3>Project 2 — Data Dashboard</h3>
+            <p>A compact dashboard prototype demonstrating layout skills and data visualization basics.</p>
+          </div>
+          <div class="card-footer">
+            <a class="demo-link" href="https://youtu.be/1VjGMTu5XUg?si=EuDQPuzhHsRbH5R0" target="_blank" rel="noopener">Watch Demo</a>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <p>© Oruc Hatamli — 2025</p>
+          <p><a href="https://github.com/oruchatamli/REPO_NAME_HERE" target="_blank" rel="noopener">Public repository</a></p>
+        </div>
+        <div class="socials">
+          <a href="https://github.com/oruchatamli" aria-label="GitHub" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.37-1.3-1.73-1.3-1.73-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.76.41-1.27.75-1.56-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.45.11-3.02 0 0 .97-.31 3.18 1.19a11.1 11.1 0 012.9-.39c.98 0 1.97.13 2.9.39 2.21-1.5 3.18-1.19 3.18-1.19.63 1.57.23 2.73.11 3.02.74.81 1.19 1.84 1.19 3.1 0 4.42-2.68 5.4-5.24 5.68.42.36.8 1.07.8 2.16 0 1.56-.01 2.82-.01 3.2 0 .31.21.68.8.56A11.52 11.52 0 0023.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+          </a>
+          <a href="https://www.codecademy.com/profiles/orujhatamli12" aria-label="Codecademy" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7v6c0 5 3.8 9.7 10 11 6.2-1.3 10-6 10-11V7l-10-5zM9.5 13.5V8l6 3.5-6 2z"/></svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
